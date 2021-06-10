@@ -6,7 +6,7 @@ if (!defined('APPLICATION_LOADED') || !APPLICATION_LOADED) {
     die('No direct script access.');
 }
 
-$abbr = ticketAbbrParse(url_segment(15));
+$abbr = ticketAbbrParse(url_segment(3));
 
 if (isset($_GET['delete_comment'])) {
     $result_delete_comment = $this->deleteComment($_GET['delete_comment']);
@@ -101,12 +101,12 @@ if (isset($_POST['addtracktime'])) {
     redirect();
 }
 
-$result = $this->ticketView(url_segment(15));
-if (url_segment(15) == false || $result == false) {
+$result = $this->ticketView(url_segment(3));
+if (url_segment(3) == false || $result == false) {
     $this->set_alert($this->lang_php['ticket_not_found'] . '!', 'danger');
     echo $this->get_alert();
 } else {
-    $this->title = '[' . url_segment(15) . '] ' . $result['subject'];
+    $this->title = '[' . url_segment(3) . '] ' . $result['subject'];
     $stat_obj = $this->getTrackedInfo($result['id'], $this->user_id);
     if ($stat_obj !== false) {
         $track_stat = $stat_obj->status;
@@ -139,11 +139,11 @@ if (url_segment(15) == false || $result == false) {
     <h1><?= $result['subject'] ?></h1>
     <ol class="breadcrumb ticket-view">
         <li><a href="<?= base_url($this->url . '/dashboard/') ?>"><?= $this->lang_php['tickets'] ?></a></li>
-        <li class="active"><?= url_segment(15) ?></li>
+        <li class="active"><?= url_segment(3) ?></li>
     </ol>
     <div id="ticket-view" class="bordered">
         <?php if ($disabled != true) { ?>
-            <a href="<?= base_url($this->url . '/newissue/' . url_segment(15)) ?>" class="btn btn-default"><i class="fa fa-pencil"></i> <?= $this->lang_php['edit'] ?></a>
+            <a href="<?= base_url($this->url . '/newissue/' . url_segment(3)) ?>" class="btn btn-default"><i class="fa fa-pencil"></i> <?= $this->lang_php['edit'] ?></a>
             <a href="javascript:void(0)" class="btn btn-default close-ticket-btn <?= $result['status_name'] == 'Closed' ? 'disabled' : '' ?>"><i class="fa fa-times"></i> <?= $this->lang_php['close_ticket'] ?></a>
         <?php } if ($disabled != true) { ?>
             <form method="post" class="pull-right" onsubmit="return confirm('<?= $this->lang_php['delete_confirm'] ?>')">

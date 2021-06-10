@@ -180,7 +180,7 @@ class Main extends Database {
     public function ticketView($ticketAbbr) {
         $ticketAbbr = ticketAbbrParse($ticketAbbr);
         $result = $this->getTickets($this->project_abbr, $ticketAbbr['id']);
-        if ($result === null || validTicketAbbr(url_segment(15)) == false) {
+        if ($result === null || validTicketAbbr(url_segment(3)) == false) {
             return false;
         } else {
             return $result;
