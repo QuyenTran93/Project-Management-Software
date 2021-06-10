@@ -3,8 +3,8 @@ if (!defined('APPLICATION_LOADED') || !APPLICATION_LOADED) {
     die('No direct script access.');
 }
 
-if (url_segment(3) !== false && url_segment(3) != null) {
-    $result_space = $this->getSpaces(url_segment(3), $this->project_id);
+if (url_segment(15) !== false && url_segment(15) != null) {
+    $result_space = $this->getSpaces(url_segment(15), $this->project_id);
     if (empty($result_space)) {
         redirect(base_url('wiki/' . $project_name . '/home'));
     }

@@ -74,7 +74,7 @@ $notif_num = $notifications < MAX_NUM_NOTIF ? $notifications : MAX_NUM_NOTIF . '
                             if (!empty($spaces)) {
                                 foreach ($spaces as $space) {
                                     ?>
-                                    <li class="<?= url_segment(3) != false && $space['key_space'] == url_segment(3) ? 'active' : '' ?>"><a href="<?= base_url('wiki/' . $project_name . '/display/' . $space['key_space']) ?>"><img class="sp-logo" src="<?= base_url(returnSpaceImageUrl($space['image'])) ?>" alt="logo"> <?= $space['name'] ?></a></li>
+                                    <li class="<?= url_segment(15) != false && $space['key_space'] == url_segment(15) ? 'active' : '' ?>"><a href="<?= base_url('wiki/' . $project_name . '/display/' . $space['key_space']) ?>"><img class="sp-logo" src="<?= base_url(returnSpaceImageUrl($space['image'])) ?>" alt="logo"> <?= $space['name'] ?></a></li>
                                     <?php
                                 }
                             } else {

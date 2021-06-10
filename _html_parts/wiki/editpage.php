@@ -13,21 +13,21 @@ if(isset($_POST['updatepage'])) {
         $this->set_alert($this->lang_php['page_was_updated'], 'success');
     }
     if(!isset($_POST['firstedit']) && $inserted_id != false) {
-        $this->setWikiLog($this->user_id, $this->project_id, $this->lang_php['update_page'], url_segment(3), $space, $inserted_id);
+        $this->setWikiLog($this->user_id, $this->project_id, $this->lang_php['update_page'], url_segment(15), $space, $inserted_id);
     }
-    if(url_segment(3)) {
-        redirect(base_url('wiki/' . $project_name . '/display/' . $space . '?viewPageId=' . url_segment(3)));
+    if(url_segment(15)) {
+        redirect(base_url('wiki/' . $project_name . '/display/' . $space . '?viewPageId=' . url_segment(15)));
     } else {
         redirect(base_url('wiki/' . $project_name . '/display/' . $space . '?viewPageId=' . $_POST['page_id']));
     }
 }
 
-if(isset($_POST['firstedit']) && !url_segment(3)) {
+if(isset($_POST['firstedit']) && !url_segment(15)) {
     $want_id = $this->addWikiPage($_POST);
     $get_template = $this->getWikiPageTemplate($_POST['page_template']);
     $this->setWikiLog($this->user_id, $this->project_id, $this->lang_php['create_page'], $want_id, $_POST['key_sp']);
-} elseif(url_segment(3) && is_numeric(url_segment(3))) {
-    $want_id = (int) url_segment(3);
+} elseif(url_segment(15) && is_numeric(url_segment(15))) {
+    $want_id = (int) url_segment(15);
 } else {
     redirect(base_url('wiki/' . $project_name));
     exit;

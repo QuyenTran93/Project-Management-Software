@@ -7,8 +7,8 @@ $this->title = $this->project_name . ' - ' . $this->lang_php['title_create_ticke
 
 $ticket_edit = false;
 $issue_links = array();
-if (url_segment(3) !== false && validTicketAbbr(url_segment(3)) !== false) {
-    $editable = ticketAbbrParse(url_segment(3));
+if (url_segment(15) !== false && validTicketAbbr(url_segment(15)) !== false) {
+    $editable = ticketAbbrParse(url_segment(15));
     $info = $this->getTicketForEdit($editable['abbr'], $editable['id']);
     if ($editable['abbr'] == $this->project_abbr && $info != null && !isset($_POST['setticket'])) {
         foreach ($info as $key => $val) {
@@ -70,7 +70,7 @@ if (isset($_POST['setticket'])) {
                 $goto = $this->url . '/dashboard';
             } else {
                 $this->set_alert($this->lang_php['ticket_updated'] . '!', 'success');
-                $goto = $this->url . '/view/' . url_segment(3);
+                $goto = $this->url . '/view/' . url_segment(15);
             }
             redirect(base_url($goto));
         } elseif ($result === false) {
@@ -306,7 +306,7 @@ $currencies = $this->getCurrencies();
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" name="setticket" class="btn btn-primary"><?= $ticket_edit == false ? $this->lang_php['create'] : $this->lang_php['update'] ?></button>
                 <?php if ($ticket_edit === true) { ?>
-                    <a href="<?= base_url($this->url . '/view/' . url_segment(3)) ?>" class="btn btn-default"><?= $this->lang_php['cancel'] ?></a>
+                    <a href="<?= base_url($this->url . '/view/' . url_segment(15)) ?>" class="btn btn-default"><?= $this->lang_php['cancel'] ?></a>
                 <?php } ?>
             </div>
         </div>

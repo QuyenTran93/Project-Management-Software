@@ -421,7 +421,7 @@ class Database extends Mysql {
                 $update_info = '';
                 $post['lastupdate'] = time();
                 $id = $this->escape($post['id']);
-                $tid = ticketAbbrParse(url_segment(3));
+                $tid = ticketAbbrParse(url_segment(15));
                 unset($post['id']);
                 foreach ($post as $key => $val) {
                     $update_info.= $key . " = '" . $val . "',";
