@@ -173,8 +173,8 @@ class Database extends Mysql {
         if (strlen($arr['name']) < 3) {
             return 'Too short name! Must have 3 or more symbols!';
         }
-        if (strlen($arr['abbr']) != 3) {
-            return 'Abbreviation must have 3 symbols!';
+        if (strlen($arr['abbr']) > 15) {
+            return 'Abbreviation must have less or 15 symbols!';
         }
         if (!preg_match('/^[a-zA-Z0-9_]+$/', $name)) {
             return 'Not allowed symbols in Name! Only number, letters and down slash can be used!';

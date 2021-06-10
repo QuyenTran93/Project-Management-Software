@@ -52,7 +52,7 @@ $('#createModal').on('hidden.bs.modal', function () {
 });
 $("[name='title']").on('input', function (e) {
     var val = $(this).val();
-    if (val.length <= 3) {
+    if (val.length <= 15) {
         $("[name='abbr']").val(val.toUpperCase());
     }
 });
