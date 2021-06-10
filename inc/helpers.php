@@ -117,7 +117,7 @@ function secondsToTime($seconds, $want_array = false) {
 }
 
 function validTicketAbbr($ticketAbbr) {
-    if (preg_match('/^[a-zA-Z]{3}-[0-9]+$/', $ticketAbbr)) {
+    if (preg_match('/^[a-zA-Z]{15}-[0-9]+$/', $ticketAbbr)) {
         return true;
     } else {
         return false;

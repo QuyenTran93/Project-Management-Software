@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `professions` (
 CREATE TABLE IF NOT EXISTS `projects` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `for_account` int(11) NOT NULL,
-  `abbr` varchar(3) NOT NULL COMMENT 'tickets abbreviation',
+  `abbr` varchar(15) NOT NULL COMMENT 'tickets abbreviation',
   `name` varchar(30) NOT NULL,
   `sync` int(11) NOT NULL DEFAULT '0' COMMENT 'synced with connection id',
   `timestamp` int(15) unsigned NOT NULL COMMENT 'creation time',
