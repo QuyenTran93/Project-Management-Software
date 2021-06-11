@@ -435,7 +435,7 @@ class Database extends Mysql {
                 $post['project'] = $project_id[0]['id'];
                 $maxid = $this->query("SELECT MAX(ticket_id) as id FROM tickets WHERE for_account=" . ACCOUNT_ID . " AND project = " . $post['project']);
                 $post['ticket_id'] = $maxid->fetch_object()->id + 1;
-                if ($post['status'] == 4) {
+                if ($post['status'] == 6) {
                     $post['timeclosed'] = time();
                 } else {
                     $post['timeclosed'] = 0;

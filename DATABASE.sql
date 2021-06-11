@@ -255,11 +255,13 @@ CREATE TABLE IF NOT EXISTS `ticket_statuses` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 INSERT INTO `ticket_statuses` (`id`, `name`) VALUES
-(4, 'Closed'),
-(3, 'In Progress'),
+(6, 'Done'),
+(4, 'In Progress'),
+(5, 'Fixed'),
 (1, 'New'),
-(5, 'Rejected'),
-(2, 'To Do');
+(2, 'Re-Open'),
+(7, 'Rejected'),
+(3, 'To Do');
 
 CREATE TABLE IF NOT EXISTS `ticket_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
