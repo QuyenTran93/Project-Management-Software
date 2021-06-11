@@ -78,6 +78,8 @@ if (isset($_POST['save_comment'])) {
         }
         if (isset($this->serialized_send_files)) {
             $_POST['message_attachments'] = $this->serialized_send_files;
+        } else {
+            $_POST['message_attachments'] = serialize(array());
         }
         $result_set_comment = $this->setComment($_POST);
         if ($result_set_comment == true) {
