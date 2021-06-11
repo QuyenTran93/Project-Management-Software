@@ -172,7 +172,7 @@ if (url_segment(3) == false || $result == false) {
                                             $closedid = null;
                                             foreach ($this->getStatuses() as $status) {
                                                 if ($closedid == null) {
-                                                    strtolower(trim($status['name'])) == 'Closed' ? $closedid = $status['id'] : $closedid = null;
+                                                    strtolower(trim($status['name'])) == 'closed' ? $closedid = $status['id'] : $closedid = null;
                                                 }
                                                 ?>
                                                 <option value="<?= $status['id'] ?>" <?= $status['name'] == $result['status_name'] ? 'selected' : '' ?> name="<?= $status['name'] ?>"><?= $status['name'] ?></option>
