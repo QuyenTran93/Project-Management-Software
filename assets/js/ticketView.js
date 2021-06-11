@@ -17,7 +17,7 @@ function changeStatus(ticket_id, to_status_id) {
 }
 $('#status').on('change', function () {
     changeStatus(tid, $(this).val());
-    if ($("#status option:selected").val() == 4) {
+    if ($("#status option:selected").val() == 6) {
         $('.close-ticket-btn').addClass('disabled');
     } else {
         $('.close-ticket-btn').removeClass('disabled');
