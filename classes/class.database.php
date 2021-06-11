@@ -538,7 +538,8 @@ class Database extends Mysql {
         return $result;
     }
 
-    public function changeTicketStatus($ticketid, $tostatusid) {
+    public function changeTicketStatus($projectid, $ticketid, $tostatusid) {
+        $projectid = $this->escape($projectid);
         $ticketid = $this->escape($ticketid);
         $tostatusid = $this->escape($tostatusid);
         if ($tostatusid == 4) {
@@ -546,7 +547,7 @@ class Database extends Mysql {
         } else {
             $timeclosed = 0;
         }
-        $result = $this->query("UPDATE tickets SET status='$tostatusid', timeclosed = '$timeclosed' WHERE ticket_id = '$ticketid' AND for_account=" . ACCOUNT_ID);
+        $result = $this->query("UPDATE tickets SET status='$tostatusid', timeclosed = '$timeclosed' WHERE ticket_id = '$ticketid' AND project='$projectid' AND for_account=" . ACCOUNT_ID);
         return $result;
     }
 
