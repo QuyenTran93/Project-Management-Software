@@ -62,6 +62,8 @@ if (isset($_POST['save_comment'])) {
         );
         $result_send = $this->sendEmail($send_email);
         $_POST['send'] = 1;
+    } else {
+        $_POST['send'] = 0;
     }
     unset($_POST['isHTML']);
     unset($_POST['sendEmail']);
