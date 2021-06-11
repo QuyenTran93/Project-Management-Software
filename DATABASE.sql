@@ -255,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `ticket_statuses` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 INSERT INTO `ticket_statuses` (`id`, `name`) VALUES
-(6, 'Done'),
+(6, 'Closed'),
 (4, 'In Progress'),
 (5, 'Fixed'),
 (1, 'New'),
