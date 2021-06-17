@@ -341,7 +341,7 @@ class Database extends Mysql {
             $where = $search_in . $between . $type_select . $status_select . $priority_select;
 //Filter END!
 
-            $result_num = $this->query("SELECT count(tickets.status) as num, ticket_statuses.name, SUM(IF(tickets.duedate!=0 AND tickets.duedate<" . time() . ",1,0)) as expired FROM ticket_statuses INNER JOIN tickets ON ticket_statuses.id = tickets.status INNER JOIN projects ON projects.id=tickets.project $fast_watched_join WHERE for_account=" . ACCOUNT_ID . " AND projects.name='$this->project_name' $where $fast_assign_to_me $fast_watched_where GROUP BY ticket_statuses.name");
+            $result_num = $this->query("SELECT count(tickets.status) as num, ticket_statuses.name, SUM(IF(tickets.duedate!=0 AND tickets.duedate<" . time() . ",1,0)) as expired FROM ticket_statuses INNER JOIN tickets ON ticket_statuses.id = tickets.status INNER JOIN projects ON projects.id=tickets.project $fast_watched_join WHERE projects.for_account=" . ACCOUNT_ID . " AND projects.name='$this->project_name' $where $fast_assign_to_me $fast_watched_where GROUP BY ticket_statuses.name");
             if ($result_num !== false) {
                 while ($row = $result_num->fetch_assoc()) {
                     $arr['nums'][$row['name']]['num'] = $row['num'];
