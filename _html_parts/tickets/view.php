@@ -140,6 +140,7 @@ if (url_segment(3) == false || $result == false) {
     ?>
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap-datepicker.min.css') ?>">
     <script src="<?= base_url('assets/js/ckeditor/ckeditor.js') ?>"></script>
+    <script src="<?= base_url('assets/js/ckfinder/ckfinder.js') ?>"></script>
     <h1><?= $result['subject'] ?></h1>
     <ol class="breadcrumb ticket-view">
         <li><a href="<?= base_url($this->url . '/dashboard/') ?>"><?= $this->lang_php['tickets'] ?></a></li>
@@ -606,6 +607,8 @@ if (url_segment(3) == false || $result == false) {
     pph_c: '<?= $result['pph_c'] ?>',
     currency_conv_url: '<?= base_url('currency_convertor') ?>'
     };
+    CKFinder.setupCKEditor();
+                    // CKEDITOR.replace('description');
 </script>
 <script src="<?= base_url('assets/js/ticketView.js') ?>"></script>
 <script src="<?= base_url('assets/js/bootstrap-datepicker.min.js') ?>"></script>

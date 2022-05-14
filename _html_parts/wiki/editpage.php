@@ -46,6 +46,7 @@ if($the_page === null) {
 $this->title = $this->project_name . ' -' . $this->lang_php['title_edit_page'] . ' - ' . $the_page['title'];
 ?>
 <script src="<?= base_url('assets/js/ckeditor/ckeditor.js') ?>"></script>
+<script src="<?= base_url('assets/js/ckfinder/ckfinder.js') ?>"></script>
 <div id="edit-wiki-page">
     <form action="" method="POST">
         <input type="hidden" name="updatepage" value="<?= isset($_POST['firstedit']) ? '0' : '1' ?>">
@@ -57,6 +58,7 @@ $this->title = $this->project_name . ' -' . $this->lang_php['title_edit_page'] .
         <div class="form-group">
             <textarea name="content_edit_p" class="form-control"><?= isset($_POST['firstedit']) ? $get_template['content'] : $the_page['content'] ?></textarea>
             <script>
+                CKFinder.setupCKEditor();
                 CKEDITOR.replace('content_edit_p');
             </script>
         </div>

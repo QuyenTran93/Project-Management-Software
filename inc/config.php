@@ -31,6 +31,9 @@ $CONFIG['DEFAULT_USER_TYPES'] = array(//MUST BE SORTED! <
     'Watcher' => ''
 );
 
+
+// define('ACCOUNT_DOMAIN', 'localhost');
+$CONFIG['ACCOUNT_DOMAIN'] = 'localhost';
 /*
  * ACCOUNT_DOMAIN constant is defined in class.subdomain.php
  * If is not enabled subdomain support, it is defined in index.php
@@ -38,11 +41,11 @@ $CONFIG['DEFAULT_USER_TYPES'] = array(//MUST BE SORTED! <
 $CONFIG['USERNAMEREGEX'] = '/^[a-zа-яA-ZА-Я0-9]+$/'; //REGISTRATION REGEX
 $CONFIG['FULLNAMEREGEX'] = '/^[a-zа-яA-ZА-Я\s]+$/'; //REGISTRATION REGEX
 $CONFIG['EMAILREGEX'] = '/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/'; //REGISTRATION REGEX
-$CONFIG['IMAGESUSERSUPLOADDIR'] = 'attachments/' . ACCOUNT_DOMAIN . '/users_profile/'; //PROFILE IMAGES
-$CONFIG['IMAGELOGINUPLOADDIR'] = 'attachments/' . ACCOUNT_DOMAIN . '/login_image/'; //PROFILE IMAGES 
-$CONFIG['ATTACHMENTS_DIR'] = 'attachments/' . ACCOUNT_DOMAIN . '/imap/'; //USABLE IN class.imap.php
+$CONFIG['IMAGESUSERSUPLOADDIR'] = 'attachments/' . $CONFIG['ACCOUNT_DOMAIN'] . '/users_profile/'; //PROFILE IMAGES
+$CONFIG['IMAGELOGINUPLOADDIR'] = 'attachments/' . $CONFIG['ACCOUNT_DOMAIN'] . '/login_image/'; //PROFILE IMAGES 
+$CONFIG['ATTACHMENTS_DIR'] = 'attachments/' . $CONFIG['ACCOUNT_DOMAIN'] . '/imap/'; //USABLE IN class.imap.php
 $CONFIG['DEFAULTUSERIMAGE'] = 'default/male.jpg'; //DEFAULT USER IMAGE 
-$CONFIG['IMAGESSPACESUPLOADDIR'] = 'attachments/' . ACCOUNT_DOMAIN . '/space_logos/'; //SPACE IMAGES
+$CONFIG['IMAGESSPACESUPLOADDIR'] = 'attachments/' . $CONFIG['ACCOUNT_DOMAIN'] . '/space_logos/'; //SPACE IMAGES
 $CONFIG['DEFAULTSPACEIMAGE'] = 'default/space-logo.png'; //DEFAULT SPACE IMAGE 
 $CONFIG['SPACEKEYREGEX'] = '/^[a-zA-Zа-яА-Я0-9_]+$/'; //WIKI SPACE KEY REGEX
 $CONFIG['WIKI_PAGES_NAMES'] = '/^[a-zA-Zа-яА-Я0-9_-]+$/'; //WIKI SPACE KEY REGEX

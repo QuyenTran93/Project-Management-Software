@@ -1,6 +1,6 @@
 ﻿/**
- * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or https://ckeditor.com/license
+ * @license Copyright (c) 2003-2022, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license/
  */
 
 /**
@@ -13,10 +13,10 @@
  * (1) https://ckeditor.com/cke4/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) https://ckeditor.com/cke4/builder/2cdfd745ee490808742f9f45f3b1b681
+ * (2) https://ckeditor.com/cke4/builder/6e650175da27e83915d9c6074d7a1edb
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) https://ckeditor.com/cke4/builder/download/2cdfd745ee490808742f9f45f3b1b681
+ * (3) https://ckeditor.com/cke4/builder/download/6e650175da27e83915d9c6074d7a1edb
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -67,15 +67,14 @@ var CKBUILDER_CONFIG = {
 		'floatingspace' : 1,
 		'format' : 1,
 		'horizontalrule' : 1,
+		'html5video' : 1,
 		'htmlwriter' : 1,
 		'image' : 1,
-		'imageresizerowandcolumn' : 1,
 		'indentlist' : 1,
 		'link' : 1,
 		'list' : 1,
 		'magicline' : 1,
 		'maximize' : 1,
-		'pastebase64' : 1,
 		'pastefromgdocs' : 1,
 		'pastefromlibreoffice' : 1,
 		'pastefromword' : 1,
@@ -93,6 +92,7 @@ var CKBUILDER_CONFIG = {
 		'tabletools' : 1,
 		'toolbar' : 1,
 		'undo' : 1,
+		'uploadfile' : 1,
 		'uploadimage' : 1,
 		'wysiwygarea' : 1
 	},

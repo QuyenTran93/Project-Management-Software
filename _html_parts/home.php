@@ -85,7 +85,7 @@ $projects = $this->getProjects();
                         </div>
                         <div class="form-group">
                             <label for="abbr"><?= $this->lang_php['abbrevation'] ?></label>
-                            <input type="text" class="form-control" name="abbr" placeholder="<?= $this->lang_php['abbrevation_regex'] ?>" maxlength="15" value="" id="abbr">
+                            <input type="text" class="form-control" name="abbr" placeholder="<?= $this->lang_php['abbrevation_regex'] ?>" maxlength="30" value="" id="abbr">
                         </div>
                         <div class="checkbox check-sync">
                             <label><input type="checkbox" name="sync" value=""><?= $this->lang_php['sync_email_account'] ?></label>

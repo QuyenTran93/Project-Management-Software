@@ -92,6 +92,7 @@ $currencies = $this->getCurrencies();
 ?>
 <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap-datepicker.min.css') ?>">
 <script src="<?= base_url('assets/js/ckeditor/ckeditor.js') ?>"></script>
+<script src="<?= base_url('assets/js/ckfinder/ckfinder.js') ?>"></script>
 <div id="newissue">
     <h1><?= $ticket_edit === true ? $this->lang_php['update_ticket'] : $this->lang_php['new_issue'] ?></h1>
     <?= $this->get_alert() ?>
@@ -117,6 +118,7 @@ $currencies = $this->getCurrencies();
             <div class="col-sm-10">
                 <textarea name="description" id="description" rows="50" class="form-control"><?= isset($_POST['description']) ? $_POST['description'] : '' ?></textarea>
                 <script>
+                    CKFinder.setupCKEditor();
                     CKEDITOR.replace('description');
                 </script>
             </div>
@@ -171,7 +173,7 @@ $currencies = $this->getCurrencies();
         <div class="form-group">
             <label class="control-label col-sm-2" for="duedate"><?= $this->lang_php['due_date'] ?></label>
             <div class="col-sm-10">
-                <input type="text" class="form-control date-pick" name="duedate" id="duedate" value="<?= $ticket_edit === true && !isset($_POST['setticket']) && $_POST['duedate'] > 0 ? date('d.m.Y', $_POST['duedate']) : isset($_POST['duedate']) ? $_POST['duedate'] : '' ?>" placeholder="dd.mm.yyy">
+                <input type="text" class="form-control date-pick" name="duedate" id="duedate" value="<?= $ticket_edit === true && !isset($_POST['setticket']) && $_POST['duedate'] > 0 ? date('d.m.Y', $_POST['duedate']) : (isset($_POST['duedate']) ? $_POST['duedate'] : '') ?>" placeholder="dd.mm.yyy">
             </div>
         </div>
         <div class="form-group">
